@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<title>Upload new File</title>
+<body>
+    <h1>Upload new File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input id="file-upload" type="file" name="file" accept="audio/*">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if transcribed_text %}
+        <h2>Transcribed text</h2>
+        <p>{{transcribed_text}}</p>
+        {% if key_points %}
+        <div>
+            <h2>Key Points </h2>
+            <p>{{key_points}}</p>
+        </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
